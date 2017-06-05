@@ -1,8 +1,8 @@
 package reversi;
 
 import base.model.GameAction;
+import base.model.GameState.Coord;
 import was.WasState;
-import was.WasState.Coord;
 
 public class ReversiAction implements GameAction<ReversiState, ReversiAction> {
 

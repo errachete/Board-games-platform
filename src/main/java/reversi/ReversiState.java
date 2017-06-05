@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import base.model.GameState;
-import was.WasState.Coord;
 
 public class ReversiState extends GameState<ReversiState, ReversiAction> {
 

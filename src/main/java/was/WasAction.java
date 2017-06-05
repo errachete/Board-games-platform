@@ -1,7 +1,7 @@
 package was;
 
 import base.model.GameAction;
-import was.WasState.Coord;
+import base.model.GameState.Coord;
 
 /**
  * An action for Wolf and Sheeps.

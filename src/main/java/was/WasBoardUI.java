@@ -5,9 +5,9 @@ import java.awt.Graphics;
 import java.util.List;
 import java.util.logging.Logger;
 
+import base.model.GameState.Coord;
 import view.BoardUI;
 import view.ColorTableUI.ColorModel;
-import was.WasState.Coord;
 
 /**
  * A board for Wolf and Sheep.

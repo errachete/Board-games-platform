@@ -15,39 +15,6 @@ import base.model.GameState;
 
 public class WasState extends GameState<WasState, WasAction> {
 
-	/**
-	 * Class representing a coordinate on the game board
-	 */
-	public static class Coord {
-		public int row;
-		public int col;
-
-		public Coord(int row, int col) {
-			this.row = row;
-			this.col = col;
-		}
-
-		public Coord add(Coord o) {
-			return new Coord(this.row + o.row, this.col + o.col);
-		}
-
-		public boolean isAt(int r, int c) {
-			return r == row && c == col;
-		}
-
-		public String toString() {
-			return "(" + row + ", " + col + ")";
-		}
-
-		public Coord copy() {
-			return new Coord(row, col);
-		}
-
-		public boolean equal(Coord other) {
-			return col == other.col && row == other.row;
-		}
-	}
-
 	private static final long serialVersionUID = -6066312347935012935L;
 
 	private final int turn;
