@@ -2,7 +2,7 @@ Board-games-platform
 
 A platform to play board games. By the moment:
   - Tic Tac Toe
-  - Wolf and Sheeps
+  - Wolf and Sheep
   - Reversi
   
 Things to do:
