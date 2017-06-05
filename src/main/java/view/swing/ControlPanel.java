@@ -1,4 +1,4 @@
-package view;
+package view.swing;
 
 import java.awt.FlowLayout;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import view.PlayerUI.PlayerMode;
+import view.swing.PlayerUI.PlayerMode;
 
 /**
  * North panel of the window. Contains four buttons and one comboBox to change

@@ -4,8 +4,8 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import view.BoardUI.BoardListener;
-import view.ColorTableUI;
+import view.swing.ColorTableUI;
+import view.swing.BoardUI.BoardListener;
 
 public class TttBoardUITest {
 

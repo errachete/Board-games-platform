@@ -4,8 +4,9 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import view.InfoPanel;
-import view.InfoPanel.InfoPanelListener;
+import view.swing.ColorTableUI;
+import view.swing.InfoPanel;
+import view.swing.InfoPanel.InfoPanelListener;
 
 public class InfoPanelTest {
 

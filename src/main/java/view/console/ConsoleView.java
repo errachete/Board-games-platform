@@ -1,4 +1,4 @@
-package view;
+package view.console;
 
 import base.model.GameAction;
 import base.model.GameState;

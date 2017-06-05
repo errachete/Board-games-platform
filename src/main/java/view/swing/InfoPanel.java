@@ -1,4 +1,4 @@
-package view;
+package view.swing;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -15,7 +15,7 @@ import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.TableCellRenderer;
 
-import view.ColorTableUI.ColorModel;
+import view.swing.ColorTableUI.ColorModel;
 
 public class InfoPanel extends JPanel{
 

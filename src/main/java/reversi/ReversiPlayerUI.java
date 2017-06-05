@@ -1,11 +1,11 @@
 package reversi;
 
 import mvc.GameTable;
-import view.BoardUI;
-import view.BoardUI.BoardListener;
-import view.ColorTableUI.ColorModel;
-import view.FrameUI;
-import view.PlayerUI;
+import view.swing.BoardUI;
+import view.swing.FrameUI;
+import view.swing.PlayerUI;
+import view.swing.BoardUI.BoardListener;
+import view.swing.ColorTableUI.ColorModel;
 
 public class ReversiPlayerUI extends PlayerUI<ReversiState, ReversiAction> {
 

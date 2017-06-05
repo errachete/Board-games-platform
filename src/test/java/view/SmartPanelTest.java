@@ -4,8 +4,8 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import view.SmartPanel;
-import view.SmartPanel.SmartPanelListener;
+import view.swing.SmartPanel;
+import view.swing.SmartPanel.SmartPanelListener;
 
 public class SmartPanelTest {
 

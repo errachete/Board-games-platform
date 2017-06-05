@@ -1,4 +1,4 @@
-package view;
+package view.swing;
 
 import java.awt.BorderLayout;
 
@@ -12,14 +12,14 @@ import base.model.GameState;
 import base.player.ConcurrentAiPlayer;
 import base.player.RandomPlayer;
 import mvc.GameTable;
-import view.BoardUI.BoardListener;
-import view.ColorTableUI.ColorModel;
-import view.SmartPanel;
-import view.SmartPanel.SmartPanelListener;
-import view.ControlPanel;
-import view.ControlPanel.ControlPanelListener;
-import view.InfoPanel;
-import view.InfoPanel.InfoPanelListener;
+import view.swing.ControlPanel;
+import view.swing.InfoPanel;
+import view.swing.SmartPanel;
+import view.swing.BoardUI.BoardListener;
+import view.swing.ColorTableUI.ColorModel;
+import view.swing.ControlPanel.ControlPanelListener;
+import view.swing.InfoPanel.InfoPanelListener;
+import view.swing.SmartPanel.SmartPanelListener;
 
 /**
  * Class in charge of the visual components on GUI mode for a given player.

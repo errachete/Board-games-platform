@@ -3,8 +3,8 @@ package ttt;
 import java.awt.Graphics;
 import java.util.logging.Logger;
 
-import view.BoardUI;
-import view.ColorTableUI.ColorModel;
+import view.swing.BoardUI;
+import view.swing.ColorTableUI.ColorModel;
 
 /**
  * A board for tic tac toe game.

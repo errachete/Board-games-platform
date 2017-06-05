@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import base.model.GameState.Coord;
-import view.BoardUI;
-import view.ColorTableUI.ColorModel;
+import view.swing.BoardUI;
+import view.swing.ColorTableUI.ColorModel;
 
 /**
  * A board for Wolf and Sheep.

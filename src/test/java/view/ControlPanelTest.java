@@ -4,9 +4,9 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import view.ControlPanel;
-import view.ControlPanel.ControlPanelListener;
-import view.PlayerUI.PlayerMode;
+import view.swing.ControlPanel;
+import view.swing.ControlPanel.ControlPanelListener;
+import view.swing.PlayerUI.PlayerMode;
 
 public class ControlPanelTest {
 	
