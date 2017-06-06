@@ -29,6 +29,10 @@ public abstract class GameState<S extends GameState<S, A>, A extends GameAction<
 		public Coord add(Coord o) {
 			return new Coord(this.row + o.row, this.col + o.col);
 		}
+		
+		public Coord multiply(int mult){
+			return new Coord(this.row * mult, this.col * mult);
+		}
 
 		public boolean isAt(int r, int c) {
 			return r == row && c == col;

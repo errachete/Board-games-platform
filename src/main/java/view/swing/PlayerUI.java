@@ -199,12 +199,12 @@ public abstract class PlayerUI<S extends GameState<S, A>, A extends GameAction<S
 			case Start:
 				cPanel.enableButtons(e.getState().getTurn() == id);
 				board.setState(e.getState());
+				iPanel.clearMessages();
+				iPanel.addMessage("The game has started.");
 				if (e.getState().getTurn() == id && !e.getState().isFinished()) {
 					iPanel.addMessage("It's your turn.");
 					autoMove();
 				}
-				iPanel.clearMessages();
-				iPanel.addMessage("The game has started.");
 				break;
 			case Stop:
 				smartMove.interrupt();

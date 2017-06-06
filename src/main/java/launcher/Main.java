@@ -7,8 +7,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Level;
+
 import javax.swing.SwingUtilities;
 
+import pawns.PawnsAction;
+import pawns.PawnsPlayerUI;
+import pawns.PawnsState;
 import base.console.ConsolePlayer;
 import base.model.GameAction;
 import base.model.GamePlayer;
@@ -30,6 +34,7 @@ import was.WasState;
 
 /**
  * Main class of the application. It's the launcher of the game.
+ * 
  * @author claudiaggh & errachete
  * @version 2 (03/05/2017)
  */
@@ -70,7 +75,9 @@ public class Main {
 
 	/**
 	 * Method which starts and returns a new GameTable of the type given
-	 * @param gType type of the game
+	 * 
+	 * @param gType
+	 *            type of the game
 	 * @return GameTable of the type given
 	 */
 	private static GameTable<?, ?> createGame(String gType) {
@@ -80,15 +87,21 @@ public class Main {
 		case "was":
 			return new GameTable<WasState, WasAction>(new WasState());
 		case "reversi":
-			return new GameTable<ReversiState, ReversiAction>(new ReversiState());
+			return new GameTable<ReversiState, ReversiAction>(
+					new ReversiState());
+		case "pawns":
+			return new GameTable<PawnsState, PawnsAction>(new PawnsState());
 		}
 		return null;
 	}
 
 	/**
 	 * Initiates a game in console mode with players in the given modes
-	 * @param game given to run
-	 * @param playerModes of the players who are going to play
+	 * 
+	 * @param game
+	 *            given to run
+	 * @param playerModes
+	 *            of the players who are going to play
 	 */
 	private static <S extends GameState<S, A>, A extends GameAction<S, A>> void startConsoleMode(
 			GameTable<S, A> game, String playerModes[]) {
@@ -108,22 +121,27 @@ public class Main {
 			}
 		}
 		new ConsoleView<S, A>(game);
-		ConsoleController<S, A> ctrl = new ConsoleController<S, A>(players, game);
+		ConsoleController<S, A> ctrl = new ConsoleController<S, A>(players,
+				game);
 		ctrl.run();
 	}
 
 	/**
 	 * Initiates a game in gui mode with the players in the given modes
-	 * @param gType type of the game which is going to be run
-	 * @param game given to run
-	 * @param playerModes of the players who are going to play
+	 * 
+	 * @param gType
+	 *            type of the game which is going to be run
+	 * @param game
+	 *            given to run
+	 * @param playerModes
+	 *            of the players who are going to play
 	 */
 	private static <S extends GameState<S, A>, A extends GameAction<S, A>> void startGUIMode(
 			String gType, GameTable<S, A> game, String playerModes[]) {
 
 		List<GamePlayer> players = new ArrayList<GamePlayer>();
 		List<String> names = notRepNames(playerModes.length);
-		
+
 		int screenSize = Toolkit.getDefaultToolkit().getScreenSize().width;
 		int separator = screenSize / playerModes.length;
 
@@ -132,7 +150,8 @@ public class Main {
 			@SuppressWarnings("unchecked")
 			@Override
 			public void run() {
-				if (gType.equals("ttt")) {
+				switch (gType) {
+				case "ttt": {
 					for (int i = 0; i < playerModes.length; ++i) {
 						players.add(new ConsolePlayer(names.get(i),
 								new Scanner(System.in)));
@@ -140,7 +159,9 @@ public class Main {
 								players.get(i).getName(), i, i * separator);
 					}
 					game.start();
-				} else if (gType.equals("was")){
+					break;
+				}
+				case "was": {
 					for (int i = 0; i < playerModes.length; ++i) {
 						players.add(new ConsolePlayer(names.get(i),
 								new Scanner(System.in)));
@@ -148,14 +169,30 @@ public class Main {
 								players.get(i).getName(), i, i * separator);
 					}
 					game.start();
-				} else if (gType.equals("reversi")) {
+					break;
+				}
+				case "reversi": {
 					for (int i = 0; i < playerModes.length; ++i) {
 						players.add(new ConsolePlayer(names.get(i),
 								new Scanner(System.in)));
-						new ReversiPlayerUI((GameTable<ReversiState, ReversiAction>) game,
+						new ReversiPlayerUI(
+								(GameTable<ReversiState, ReversiAction>) game,
 								players.get(i).getName(), i, i * separator);
 					}
 					game.start();
+					break;
+				}
+				case "pawns": {
+					for (int i = 0; i < playerModes.length; ++i) {
+						players.add(new ConsolePlayer(names.get(i),
+								new Scanner(System.in)));
+						new PawnsPlayerUI(
+								(GameTable<PawnsState, PawnsAction>) game,
+								players.get(i).getName(), i, i * separator);
+					}
+					game.start();
+					break;
+				}
 				}
 			}
 		});
@@ -175,9 +212,9 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String... args) {
-		
+
 		Log.setupLogging(Level.INFO);
-		
+
 		if (args.length < 2) {
 			usage();
 			System.exit(1);
