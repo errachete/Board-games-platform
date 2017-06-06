@@ -47,6 +47,7 @@ public abstract class PlayerUI<S extends GameState<S, A>, A extends GameAction<S
 	private InfoPanel iPanel;
 	private ControlPanel cPanel;
 	private SmartPanel sPanel;
+	private ClockPanel kPanel;
 	private BoardUI<S, A> board;
 
 	/**
@@ -173,6 +174,7 @@ public abstract class PlayerUI<S extends GameState<S, A>, A extends GameAction<S
 			}
 
 		});
+		this.kPanel = new ClockPanel(id);
 		this.board = createBoard(id, cm, state, new BoardListener<S, A>() {
 			public void makeManualMove(A a) {
 				if (id == game.getState().getTurn()) {
@@ -187,7 +189,10 @@ public abstract class PlayerUI<S extends GameState<S, A>, A extends GameAction<S
 		});
 
 		jf.add(board, BorderLayout.CENTER);
-		jf.add(iPanel, BorderLayout.EAST);
+		JPanel auxEast = new JPanel(new BorderLayout());
+		auxEast.add(kPanel, BorderLayout.NORTH);
+		auxEast.add(iPanel, BorderLayout.CENTER);
+		jf.add(auxEast, BorderLayout.EAST);
 		JPanel auxNorth = new JPanel();
 		auxNorth.add(cPanel, BorderLayout.WEST);
 		auxNorth.add(sPanel, BorderLayout.EAST);
